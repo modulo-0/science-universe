@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Événements à venir et passés de la communauté Science Universe.">
+    <title>Science Universe — Événements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav" aria-label="Navigation principale">
+            <a href="index.html" class="brand">
+                <img src="images/image1.jpeg" alt="Logo Science Universe" width="48" height="40">
+                <span>Science Universe</span>
+            </a>
+
+            <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="evenements.html" class="active">Événements</a></li>
+                    <li><a href="index.html#membres">Membres</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="index.html#apropos">À propos</a></li>
+                </ul>
+                <a class="btn btn-nav" href="connexion.html">Se connecter</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <h1>Événements</h1>
+            <p>Conférences, ateliers et rencontres de la communauté</p>
+        </section>
+
+        <section class="section page-section">
+            <div class="section-header section-header-left">
+                <h2>À venir</h2>
+                <p class="section-subtitle">Prochains rendez-vous à ne pas manquer</p>
+            </div>
+            <div class="events-grid" id="upcoming-events">
+                <!-- Généré par JavaScript -->
+            </div>
+            <p class="empty-state hidden" id="upcoming-empty">
+                Aucun événement à venir pour le moment. Reviens bientôt !
+            </p>
+        </section>
+
+        <section class="section page-section section-past">
+            <div class="section-header section-header-left">
+                <h2>Événements passés</h2>
+                <p class="section-subtitle">Retour sur nos précédentes activités</p>
+            </div>
+            <div class="events-grid events-grid-past" id="past-events">
+                <!-- Généré par JavaScript -->
+            </div>
+            <p class="empty-state hidden" id="past-empty">
+                Aucun événement passé enregistré.
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">Science Universe</span>
+                <p>Explorer, apprendre, partager la science ensemble.</p>
+            </div>
+            <nav class="footer-nav" aria-label="Liens du pied de page">
+                <a href="articles.html">Articles</a>
+                <a href="evenements.html">Événements</a>
+                <a href="index.html#apropos">À propos</a>
+                <a href="connexion.html">Connexion</a>
+            </nav>
+        </div>
+        <p class="footer-copy">&copy; 2026 Science Universe. Tous droits réservés.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tous les articles Science Universe classés par catégorie.">
+    <title>Science Universe — Articles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav" aria-label="Navigation principale">
+            <a href="index.html" class="brand">
+                <img src="images/image1.jpeg" alt="Logo Science Universe" width="48" height="40">
+                <span>Science Universe</span>
+            </a>
+
+            <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="evenements.html">Événements</a></li>
+                    <li><a href="index.html#membres">Membres</a></li>
+                    <li><a href="articles.html" class="active">Articles</a></li>
+                    <li><a href="index.html#apropos">À propos</a></li>
+                </ul>
+                <a class="btn btn-nav" href="connexion.html">Se connecter</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <h1>Articles</h1>
+            <p>Explorez nos publications classées par domaine scientifique</p>
+        </section>
+
+        <section class="section page-section">
+            <div class="category-filters" id="category-filters" role="tablist" aria-label="Filtrer par catégorie">
+                <!-- Généré par JavaScript -->
+            </div>
+
+            <div id="articles-container">
+                <!-- Généré par JavaScript -->
+            </div>
+
+            <p class="empty-state hidden" id="articles-empty">
+                Aucun article dans cette catégorie pour le moment.
+            </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">Science Universe</span>
+                <p>Explorer, apprendre, partager la science ensemble.</p>
+            </div>
+            <nav class="footer-nav" aria-label="Liens du pied de page">
+                <a href="articles.html">Articles</a>
+                <a href="evenements.html">Événements</a>
+                <a href="index.html#apropos">À propos</a>
+                <a href="connexion.html">Connexion</a>
+            </nav>
+        </div>
+        <p class="footer-copy">&copy; 2026 Science Universe. Tous droits réservés.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,48 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>connexion</title>
+    <meta name="description" content="Connectez-vous à Science Universe">
+    <title>Science Universe — Connexion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <nav>
-            <div id="ico">
-                <img src="#" alt="">
+<body class="page-auth">
+    <header class="site-header">
+        <nav class="nav" aria-label="Navigation principale">
+            <a href="index.html" class="brand">
+                <img src="images/image1.jpeg" alt="Logo Science Universe" width="48" height="40">
                 <span>Science Universe</span>
-            </div>
+            </a>
 
-            <div class="navbar">
+            <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="index.html">Acceuil</a></li>
-                    <li><a href="#">Evènements</a></li>
-                    <li><a href="#">Membres</a></li>
-                    <li><a href="#">Articles</a></li>
-                    <li><a href="#">A propos</a></li>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="evenements.html">Événements</a></li>
+                    <li><a href="index.html#membres">Membres</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="index.html#apropos">À propos</a></li>
                 </ul>
-                <a class="btn nav-btn" id="nav-btn">Se Connecter</a>
+                <a class="btn btn-nav active" href="connexion.html">Se connecter</a>
             </div>
         </nav>
     </header>
-    <body>
-        <div class="login">
-            <form action="">
-                <div class="field">
-                    <label class="form-login" for="email">
-                        <input type="text" id="email" placeholder="Email">
-                    </label>
-                    <label class="form-login" for="password">
-                        <input type="password" id="password" placeholder="mot de passe">
-                    </label>
-                
-                    <span>pas de compte? <a href="#">s'inscrire</a></span>
+
+    <main class="auth-main">
+        <section class="auth-card">
+            <div class="auth-tabs" role="tablist" aria-label="Type de connexion">
+                <button type="button" class="auth-tab active" role="tab" aria-selected="true" data-tab="login">Connexion</button>
+                <button type="button" class="auth-tab" role="tab" aria-selected="false" data-tab="register">Inscription</button>
+            </div>
+
+            <form class="auth-form" id="login-form" data-form="login" novalidate>
+                <h1>Content de te revoir</h1>
+                <p class="auth-subtitle">Connecte-toi pour accéder à la communauté</p>
+
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" name="email" placeholder="ton@email.com" autocomplete="email" required>
                 </div>
+
+                <div class="form-group">
+                    <label for="login-password">Mot de passe</label>
+                    <input type="password" id="login-password" name="password" placeholder="••••••••" autocomplete="current-password" required>
+                </div>
+
+                <div class="form-row">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="remember">
+                        Se souvenir de moi
+                    </label>
+                    <a href="#" class="form-link">Mot de passe oublié ?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">Se connecter</button>
             </form>
-        </div>
-        
-    </body>
+
+            <form class="auth-form hidden" id="register-form" data-form="register" novalidate>
+                <h1>Rejoins la communauté</h1>
+                <p class="auth-subtitle">Crée ton compte Science Universe</p>
+
+                <div class="form-group">
+                    <label for="register-name">Nom d'utilisateur</label>
+                    <input type="text" id="register-name" name="username" placeholder="Ton pseudo" autocomplete="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" name="email" placeholder="ton@email.com" autocomplete="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="register-password">Mot de passe</label>
+                    <input type="password" id="register-password" name="password" placeholder="Minimum 8 caractères" autocomplete="new-password" required minlength="8">
+                </div>
+
+                <div class="form-group">
+                    <label for="register-confirm">Confirmer le mot de passe</label>
+                    <input type="password" id="register-confirm" name="confirm" placeholder="••••••••" autocomplete="new-password" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">Créer mon compte</button>
+            </form>
+
+            <p class="auth-message" id="auth-message" role="status" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <footer class="site-footer site-footer-minimal">
+        <p class="footer-copy">&copy; 2026 Science Universe</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,54 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SaaS</title>
+    <meta name="description" content="Science Universe — communauté passionnée de sciences, articles et événements.">
+    <title>Science Universe — Accueil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="ico">
-                <img src="images/image1.jpeg" alt="icon" width="50" height="40">
+    <header class="site-header">
+        <nav class="nav" aria-label="Navigation principale">
+            <a href="index.html" class="brand">
+                <img src="images/image1.jpeg" alt="Logo Science Universe" width="48" height="40">
                 <span>Science Universe</span>
-            </div>
+            </a>
 
-            <div class="navbar">
+            <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="index.html">Acceuil</a></li>
-                    <li><a href="#">Evènements</a></li>
-                    <li><a href="#">Membres</a></li>
-                    <li><a href="#">Articles</a></li>
-                    <li><a href="#">A propos</a></li>
+                    <li><a href="index.html" class="active">Accueil</a></li>
+                    <li><a href="evenements.html">Événements</a></li>
+                    <li><a href="#membres">Membres</a></li>
+                    <li><a href="articles.html">Articles</a></li>
+                    <li><a href="#apropos">À propos</a></li>
                 </ul>
-                <a class="btn nav-btn" id="nav-btn" href="connexion.html">Se Connecter</a>
+                <a class="btn btn-nav" href="connexion.html">Se connecter</a>
             </div>
         </nav>
     </header>
-    <body>
-        <section class="ack">
-            <div>
-                Bienvenue dans la communauté
-                <span class="nom">Science Universe</span>
-            </div>
-            <div class="note">
-                <p class="note note1">
-                    Science Universe rassemble une communauté passionnée par toutes les sciences physique, biologie, technologie, espace et plus. Découvre nos articles, rejoins nos discussions, explore avec nous.
-                    Rejoins une communauté de curieux, d'apprenants et de passionnés de science.
-                    Un espace où chaque question mérite une réponse, et chaque découverte se partage.
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="hero-eyebrow">Communauté scientifique</p>
+                <h1>
+                    Bienvenue dans
+                    <span class="hero-title-accent">Science Universe</span>
+                </h1>
+                <p class="hero-text">
+                    Une communauté passionnée par les sciences — physique, biologie, technologie, espace et bien plus.
+                    Découvre nos articles, rejoins nos discussions et explore avec nous.
                 </p>
-            </div>
-            <div class="btn-cta">
-                <button id="cta1" class="btn cta-btn cta1">
-                    Découvrir les articles
-                </button>
-                <button id="cta2" class="btn cta-btn cta2">
-                    Rejoindre sur Whatsapp
-                </button>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <strong>500+</strong>
+                        <span>Membres</span>
+                    </div>
+                    <div class="stat">
+                        <strong>120+</strong>
+                        <span>Articles</span>
+                    </div>
+                    <div class="stat">
+                        <strong>30+</strong>
+                        <span>Événements</span>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="articles.html" class="btn btn-primary" id="cta-articles">Découvrir les articles</a>
+                    <a href="https://wa.me/" class="btn btn-outline" id="cta-whatsapp" target="_blank" rel="noopener noreferrer">Rejoindre sur WhatsApp</a>
+                </div>
             </div>
         </section>
-    </body>
+
+        <section class="section articles-preview" id="articles">
+            <div class="section-header">
+                <h2>Articles récents</h2>
+                <p class="section-subtitle">Les dernières découvertes et analyses de notre communauté</p>
+            </div>
+            <div class="articles-grid" id="home-articles">
+                <!-- Généré depuis data.js -->
+            </div>
+            <div class="section-cta">
+                <a href="articles.html" class="btn btn-outline">Voir tous les articles</a>
+            </div>
+        </section>
+
+        <section class="section events-section" id="evenements">
+            <div class="section-header">
+                <h2>Événements à venir</h2>
+                <p class="section-subtitle">Conférences, ateliers et rencontres à ne pas manquer</p>
+            </div>
+            <div class="events-grid" id="home-events">
+                <!-- Généré depuis data.js -->
+            </div>
+            <div class="section-cta">
+                <a href="evenements.html" class="btn btn-outline">Voir tous les événements</a>
+            </div>
+        </section>
+
+        <section class="section about-section" id="apropos">
+            <div class="about-content">
+                <h2>À propos de Science Universe</h2>
+                <p>
+                    Science Universe est un espace où chaque question mérite une réponse et chaque découverte se partage.
+                    Rejoins une communauté de curieux, d'apprenants et de passionnés de science.
+                </p>
+                <a href="connexion.html" class="btn btn-primary">Rejoindre la communauté</a>
+            </div>
+        </section>
+
+        <section class="section members-section" id="membres">
+            <div class="section-header">
+                <h2>Notre communauté</h2>
+                <p class="section-subtitle">Des passionnés de toutes horizons, unis par la curiosité</p>
+            </div>
+            <div class="members-grid">
+                <div class="member-card">
+                    <div class="member-avatar">SU</div>
+                    <h3>Étudiants</h3>
+                    <p>Partagez vos découvertes et apprenez ensemble</p>
+                </div>
+                <div class="member-card">
+                    <div class="member-avatar">CH</div>
+                    <h3>Chercheurs</h3>
+                    <p>Diffusez vos connaissances et échangez avec vos pairs</p>
+                </div>
+                <div class="member-card">
+                    <div class="member-avatar">CU</div>
+                    <h3>Curieux</h3>
+                    <p>Explorez la science sans prérequis ni barrière</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">Science Universe</span>
+                <p>Explorer, apprendre, partager la science ensemble.</p>
+            </div>
+            <nav class="footer-nav" aria-label="Liens du pied de page">
+                <a href="articles.html">Articles</a>
+                <a href="evenements.html">Événements</a>
+                <a href="#apropos">À propos</a>
+                <a href="connexion.html">Connexion</a>
+            </nav>
+        </div>
+        <p class="footer-copy">&copy; 2026 Science Universe. Tous droits réservés.</p>
+    </footer>
+
+    <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
