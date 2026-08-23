@@ -1,3 +1,11 @@
+const { createClient } = supabase;
+
+const SUPABASE_URL = "https://nctpcmbiqaemoesrxmhb.supabase.co";
+
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5jdHBjbWJpcWFlbW9lc3J4bWhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc0NjI3NjksImV4cCI6MjEwMzAzODc2OX0.D04rG4MloJkPVU7MG4-1QEYBNq6GNKlHshO87bvZIHg";
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
 document.addEventListener("DOMContentLoaded", () => {
     initMobileNav();
     initAuthTabs();
@@ -94,20 +102,30 @@ function initAuthForms() {
     const message = document.getElementById("auth-message");
 
     if (loginForm) {
-        loginForm.addEventListener("submit", (event) => {
+        loginForm.addEventListener("submit", async (event) => {
             event.preventDefault();
-            showAuthMessage(
-                message,
-                "Connexion en attente — branchement Supabase à venir.",
-                "success"
-            );
+
+            const email = loginForm.querySelector('[name="email"]').value;
+            const password = loginForm.querySelector('[name="password"]').value;
+
+            const { data, error } = await db.auth.signInWithPassword({ email, password });
+
+            if (error) {
+                showAuthMessage(message, "Email ou mot de passe incorrect.", "error");
+                return;
+            }
+
+            showAuthMessage(message, "Connexion réussie — redirection...", "success");
+            setTimeout(() => { window.location.href = "index.html"; }, 800);
         });
     }
 
     if (registerForm) {
-        registerForm.addEventListener("submit", (event) => {
+        registerForm.addEventListener("submit", async (event) => {
             event.preventDefault();
 
+            const username = registerForm.querySelector('[name="username"]').value;
+            const email = registerForm.querySelector('[name="email"]').value;
             const password = registerForm.querySelector('[name="password"]').value;
             const confirm = registerForm.querySelector('[name="confirm"]').value;
 
@@ -116,9 +134,20 @@ function initAuthForms() {
                 return;
             }
 
+            const { data, error } = await db.auth.signUp({
+                email,
+                password,
+                options: { data: { username } }
+            });
+
+            if (error) {
+                showAuthMessage(message, error.message, "error");
+                return;
+            }
+
             showAuthMessage(
                 message,
-                "Inscription en attente — branchement Supabase à venir.",
+                "Compte créé ! Vérifie ta boîte mail pour confirmer ton adresse.",
                 "success"
             );
         });
